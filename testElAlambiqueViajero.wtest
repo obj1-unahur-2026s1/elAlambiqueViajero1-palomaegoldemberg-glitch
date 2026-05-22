@@ -1,0 +1,33 @@
+import elAlambiqueViajero.* 
+
+describe "Tests del comportamiento de Las Vegas" {
+
+    // ANTES de cada test de acá abajo
+    method initialize() {
+        lasVegas.cambiarHomenaje(buenosAires)
+    }
+
+    test "Las Vegas da el recuerdo del mate porque homenajea a Buenos Aires" {
+        // esto tiene que dar el mate
+        assert.equals("mate con yerba", lasVegas.recuerdo())
+    }
+
+    test "Las Vegas deja entrar al Super Convertible porque es rápido" {
+        // El auto arranca siendo deportivo (rápido), y Buenos Aires (el homenajeado) pide que sea rápido.
+        assert.that(lasVegas.permiteViaje(superConvertible))
+    }
+}
+/*
+
+ 1.  VALORES EXACTOS (números, textos u objetos)
+assert.equals(valorEsperado, objeto.mensaje())
+ Ej: assert.equals("llavero", paris.recuerdo())
+
+ 2. algo es VERDADERO 
+assert.that(objeto.mensaje())
+Ej: assert.that(alambiqueVeloz.esRapido())
+
+ 3.   FALSO 
+assert.notThat(objeto.mensaje())
+ Ej: assert.notThat(tokio.permiteViaje(antigualla))
+*/
